@@ -74,7 +74,6 @@ export class UrlService {
             throw new NotFoundException('URL not found');
         }
 
-        // Удаляем ссылку (клики удалятся автоматически благодаря onDelete: Cascade)
         await this.prisma.url.delete({
             where: { shortUrl },
         });
