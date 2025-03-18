@@ -14,4 +14,7 @@ RUN npx prisma generate
 COPY wait-for-it.sh /wait-for-it.sh
 RUN chmod +x /wait-for-it.sh
 
-CMD ["/bin/sh", "-c", "/wait-for-it.sh db:5432 -- echo 'DB is ready' && npx prisma migrate dev --name init && npx prisma migrate deploy && npm run start:prod"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+CMD ["/bin/sh", "-c", "/entrypoint.sh"]

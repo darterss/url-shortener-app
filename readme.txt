@@ -6,8 +6,6 @@ URL Shortener App
 git clone https://github.com/darterss/url-shortener-app.git
 cd url-shortener-app
 docker-compose up --build
-в контейнере backend запустить:
-npx prisma migrate dev --name init
 Перейти на http://localhost:8080/
 
 
